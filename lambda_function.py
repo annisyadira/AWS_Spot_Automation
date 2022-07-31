@@ -392,166 +392,211 @@ def selection2():
         EndTime=datetime.datetime.now(),
         InstanceTypes=[alt1['instance_type']],
         MaxResults=1,
+        ProductDescriptions=[
+            'Linux/UNIX'
+        ],
         StartTime=datetime.datetime.now()-datetime.timedelta(days=1)
     )
 
     spot_price_2 = ec2_client.describe_spot_price_history(
         AvailabilityZone=alt2['az'],
         EndTime=datetime.datetime.now(),
-        InstanceTypes=[alt1['instance_type']],
+        InstanceTypes=[alt2['instance_type']],
         MaxResults=1,
+        ProductDescriptions=[
+            'Linux/UNIX'
+        ],
         StartTime=datetime.datetime.now()-datetime.timedelta(days=1)
     )
 
     spot_price_3 = ec2_client.describe_spot_price_history(
         AvailabilityZone=alt3['az'],
         EndTime=datetime.datetime.now(),
-        InstanceTypes=[alt1['instance_type']],
+        InstanceTypes=[alt3['instance_type']],
         MaxResults=1,
+        ProductDescriptions=[
+            'Linux/UNIX'
+        ],
         StartTime=datetime.datetime.now()-datetime.timedelta(days=1)
     )
 
     spot_price_4 = ec2_client.describe_spot_price_history(
         AvailabilityZone=alt4['az'],
         EndTime=datetime.datetime.now(),
-        InstanceTypes=[alt1['instance_type']],
+        InstanceTypes=[alt4['instance_type']],
         MaxResults=1,
+        ProductDescriptions=[
+            'Linux/UNIX'
+        ],
         StartTime=datetime.datetime.now()-datetime.timedelta(days=1)
     )
 
     spot_price_5 = ec2_client.describe_spot_price_history(
         AvailabilityZone=alt5['az'],
         EndTime=datetime.datetime.now(),
-        InstanceTypes=[alt1['instance_type']],
+        InstanceTypes=[alt5['instance_type']],
         MaxResults=1,
+        ProductDescriptions=[
+            'Linux/UNIX'
+        ],
         StartTime=datetime.datetime.now()-datetime.timedelta(days=1)
     )
 
     spot_price_6 = ec2_client.describe_spot_price_history(
         AvailabilityZone=alt6['az'],
         EndTime=datetime.datetime.now(),
-        InstanceTypes=[alt1['instance_type']],
+        InstanceTypes=[alt6['instance_type']],
         MaxResults=1,
+        ProductDescriptions=[
+            'Linux/UNIX'
+        ],
         StartTime=datetime.datetime.now()-datetime.timedelta(days=1)
     )
 
     spot_price_7 = ec2_client.describe_spot_price_history(
         AvailabilityZone=alt7['az'],
         EndTime=datetime.datetime.now(),
-        InstanceTypes=[alt1['instance_type']],
+        InstanceTypes=[alt7['instance_type']],
         MaxResults=1,
+        ProductDescriptions=[
+            'Linux/UNIX'
+        ],
         StartTime=datetime.datetime.now()-datetime.timedelta(days=1)
     )
 
     spot_price_8 = ec2_client.describe_spot_price_history(
         AvailabilityZone=alt8['az'],
         EndTime=datetime.datetime.now(),
-        InstanceTypes=[alt1['instance_type']],
+        InstanceTypes=[alt8['instance_type']],
         MaxResults=1,
+        ProductDescriptions=[
+            'Linux/UNIX'
+        ],
         StartTime=datetime.datetime.now()-datetime.timedelta(days=1)
     )
 
     spot_price_9 = ec2_client.describe_spot_price_history(
         AvailabilityZone=alt9['az'],
         EndTime=datetime.datetime.now(),
-        InstanceTypes=[alt1['instance_type']],
+        InstanceTypes=[alt9['instance_type']],
         MaxResults=1,
+        ProductDescriptions=[
+            'Linux/UNIX'
+        ],
         StartTime=datetime.datetime.now()-datetime.timedelta(days=1)
     )
 
     spot_price_10 = ec2_client.describe_spot_price_history(
         AvailabilityZone=alt10['az'],
         EndTime=datetime.datetime.now(),
-        InstanceTypes=[alt1['instance_type']],
+        InstanceTypes=[alt10['instance_type']],
         MaxResults=1,
+        ProductDescriptions=[
+            'Linux/UNIX'
+        ],
         StartTime=datetime.datetime.now()-datetime.timedelta(days=1)
     )
 
     spot_price_11 = ec2_client.describe_spot_price_history(
         AvailabilityZone=alt11['az'],
         EndTime=datetime.datetime.now(),
-        InstanceTypes=[alt1['instance_type']],
+        InstanceTypes=[alt11['instance_type']],
         MaxResults=1,
+        ProductDescriptions=[
+            'Linux/UNIX'
+        ],
         StartTime=datetime.datetime.now()-datetime.timedelta(days=1)
     )
 
     spot_price_12 = ec2_client.describe_spot_price_history(
         AvailabilityZone=alt12['az'],
         EndTime=datetime.datetime.now(),
-        InstanceTypes=[alt1['instance_type']],
+        InstanceTypes=[alt12['instance_type']],
         MaxResults=1,
+        ProductDescriptions=[
+            'Linux/UNIX'
+        ],
         StartTime=datetime.datetime.now()-datetime.timedelta(days=1)
     )
 
     spot_price_13 = ec2_client.describe_spot_price_history(
         AvailabilityZone=alt13['az'],
         EndTime=datetime.datetime.now(),
-        InstanceTypes=[alt1['instance_type']],
+        InstanceTypes=[alt13['instance_type']],
         MaxResults=1,
+        ProductDescriptions=[
+            'Linux/UNIX'
+        ],
         StartTime=datetime.datetime.now()-datetime.timedelta(days=1)
     )
 
     spot_price_14 = ec2_client.describe_spot_price_history(
-        AvailabilityZone=alt1['az'],
+        AvailabilityZone=alt14['az'],
         EndTime=datetime.datetime.now(),
-        InstanceTypes=[alt1['instance_type']],
+        InstanceTypes=[alt14['instance_type']],
         MaxResults=1,
+        ProductDescriptions=[
+            'Linux/UNIX'
+        ],
         StartTime=datetime.datetime.now()-datetime.timedelta(days=1)
     )
 
     spot_price_15 = ec2_client.describe_spot_price_history(
         AvailabilityZone=alt15['az'],
         EndTime=datetime.datetime.now(),
-        InstanceTypes=[alt1['instance_type']],
+        InstanceTypes=[alt15['instance_type']],
         MaxResults=1,
+        ProductDescriptions=[
+            'Linux/UNIX'
+        ],
         StartTime=datetime.datetime.now()-datetime.timedelta(days=1)
     )
 
     # assign new current value
-    alt1['discount(%)'] = float(spot_price_1['SpotPriceHistory']
-                                [0]['SpotPrice']) / 0.0066 * 100
+    alt1['discount(%)'] = (
+        0.0066 - float(spot_price_1['SpotPriceHistory'][0]['SpotPrice'])) / 0.0066 * 100
     alt1['price'] = float(spot_price_1['SpotPriceHistory'][0]['SpotPrice'])
-    alt2['discount(%)'] = float(spot_price_2['SpotPriceHistory']
-                                [0]['SpotPrice']) / 0.0066 * 100
+    alt2['discount(%)'] = (
+        0.0066 - float(spot_price_2['SpotPriceHistory'][0]['SpotPrice'])) / 0.0066 * 100
     alt2['price'] = float(spot_price_2['SpotPriceHistory'][0]['SpotPrice'])
-    alt3['discount(%)'] = float(spot_price_3['SpotPriceHistory']
-                                [0]['SpotPrice']) / 0.0066 * 100
+    alt3['discount(%)'] = (
+        0.0066 - float(spot_price_3['SpotPriceHistory'][0]['SpotPrice'])) / 0.0066 * 100
     alt3['price'] = float(spot_price_3['SpotPriceHistory'][0]['SpotPrice'])
-    alt4['discount(%)'] = float(spot_price_4['SpotPriceHistory']
-                                [0]['SpotPrice']) / 0.0123 * 100
+    alt4['discount(%)'] = (
+        0.0123 - float(spot_price_4['SpotPriceHistory'][0]['SpotPrice'])) / 0.0123 * 100
     alt4['price'] = float(spot_price_4['SpotPriceHistory'][0]['SpotPrice'])
-    alt5['discount(%)'] = float(spot_price_5['SpotPriceHistory']
-                                [0]['SpotPrice']) / 0.0123 * 100
+    alt5['discount(%)'] = (
+        0.0123 - float(spot_price_5['SpotPriceHistory'][0]['SpotPrice'])) / 0.0123 * 100
     alt5['price'] = float(spot_price_5['SpotPriceHistory'][0]['SpotPrice'])
-    alt6['discount(%)'] = float(spot_price_6['SpotPriceHistory']
-                                [0]['SpotPrice']) / 0.0123 * 100
+    alt6['discount(%)'] = (
+        0.0123 - float(spot_price_6['SpotPriceHistory'][0]['SpotPrice'])) / 0.0123 * 100
     alt6['price'] = float(spot_price_6['SpotPriceHistory'][0]['SpotPrice'])
-    alt7['discount(%)'] = float(spot_price_7['SpotPriceHistory']
-                                [0]['SpotPrice']) / 0.264 * 100
+    alt7['discount(%)'] = (
+        0.0264 - float(spot_price_7['SpotPriceHistory'][0]['SpotPrice'])) / 0.0264 * 100
     alt7['price'] = float(spot_price_7['SpotPriceHistory'][0]['SpotPrice'])
-    alt8['discount(%)'] = float(spot_price_8['SpotPriceHistory']
-                                [0]['SpotPrice']) / 0.264 * 100
+    alt8['discount(%)'] = (
+        0.0264 - float(spot_price_8['SpotPriceHistory'][0]['SpotPrice'])) / 0.0264 * 100
     alt8['price'] = float(spot_price_8['SpotPriceHistory'][0]['SpotPrice'])
-    alt9['discount(%)'] = float(spot_price_9['SpotPriceHistory']
-                                [0]['SpotPrice']) / 0.264 * 100
+    alt9['discount(%)'] = (
+        0.0264 - float(spot_price_9['SpotPriceHistory'][0]['SpotPrice'])) / 0.0264 * 100
     alt9['price'] = float(spot_price_9['SpotPriceHistory'][0]['SpotPrice'])
-    alt10['discount(%)'] = float(
-        spot_price_10['SpotPriceHistory'][0]['SpotPrice']) / 0.528 * 100
+    alt10['discount(%)'] = (
+        0.0528 - float(spot_price_10['SpotPriceHistory'][0]['SpotPrice'])) / 0.0528 * 100
     alt10['price'] = float(spot_price_10['SpotPriceHistory'][0]['SpotPrice'])
-    alt11['discount(%)'] = float(
-        spot_price_11['SpotPriceHistory'][0]['SpotPrice']) / 0.528 * 100
+    alt11['discount(%)'] = (
+        0.0528 - float(spot_price_11['SpotPriceHistory'][0]['SpotPrice'])) / 0.0528 * 100
     alt11['price'] = float(spot_price_11['SpotPriceHistory'][0]['SpotPrice'])
-    alt12['discount(%)'] = float(
-        spot_price_12['SpotPriceHistory'][0]['SpotPrice']) / 0.528 * 100
+    alt12['discount(%)'] = (
+        0.0528 - float(spot_price_12['SpotPriceHistory'][0]['SpotPrice'])) / 0.0528 * 100
     alt12['price'] = float(spot_price_12['SpotPriceHistory'][0]['SpotPrice'])
-    alt13['discount(%)'] = float(
-        spot_price_13['SpotPriceHistory'][0]['SpotPrice']) / 0.1056 * 100
+    alt13['discount(%)'] = (
+        0.1056 - float(spot_price_13['SpotPriceHistory'][0]['SpotPrice'])) / 0.1056 * 100
     alt13['price'] = float(spot_price_13['SpotPriceHistory'][0]['SpotPrice'])
-    alt14['discount(%)'] = float(
-        spot_price_14['SpotPriceHistory'][0]['SpotPrice']) / 0.1056 * 100
+    alt14['discount(%)'] = (
+        0.1056 - float(spot_price_14['SpotPriceHistory'][0]['SpotPrice'])) / 0.1056 * 100
     alt14['price'] = float(spot_price_14['SpotPriceHistory'][0]['SpotPrice'])
-    alt15['discount(%)'] = float(
-        spot_price_15['SpotPriceHistory'][0]['SpotPrice']) / 0.1056 * 100
+    alt15['discount(%)'] = (
+        0.1056 - float(spot_price_15['SpotPriceHistory'][0]['SpotPrice'])) / 0.1056 * 100
     alt15['price'] = float(spot_price_15['SpotPriceHistory'][0]['SpotPrice'])
 
     # normalization
