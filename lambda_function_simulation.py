@@ -68,6 +68,7 @@ def lambda_handler(event, context):
     vcpu_usage_data = get_vcpu_usage_data['MetricDataResults'][0]['Values'][0]
 
     selection1(vcpu, vcpu_usage_data)
+    cleanup(ec2_instance_id)
 
     return {
         'statusCode': 200,
@@ -724,3 +725,12 @@ def request(instanceType, az, price):
         )
 
         print('describe_spot_instance_requests response =', spot_request_details)
+
+
+def cleanup(instance_id):
+    # terminate current spot instance
+    terminate = ec2_client.terminate_instances(
+        InstanceIds=[
+            instance_id
+        ]
+    )
