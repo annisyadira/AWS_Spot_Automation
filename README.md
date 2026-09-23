@@ -64,6 +64,7 @@ The logic follows this sequence:
 
 - Amazon EC2
 - Amazon CloudWatch
+- Amazon EventBridge
 - AWS Lambda
 - EC2 Spot Instance API
 
